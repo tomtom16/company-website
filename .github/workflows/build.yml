@@ -52,3 +52,6 @@ jobs:
           push: true
           tags: "wiensquareacr.azurecr.io/company-website:latest"
           file: Dockerfile
+          build-args: |
+            PUBLIC_GOOGLE_MAPS_API_KEY=${{ secrets.PUBLIC_GOOGLE_MAPS_API_KEY }}
+            PUBLIC_GOOGLE_PLACE_ID=${{ secrets.PUBLIC_GOOGLE_PLACE_ID }}
