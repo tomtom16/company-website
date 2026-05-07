@@ -1,0 +1,211 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About Us" description="Learn more about Acme Corp – our story, our team, and our values.">
+
+  <!-- Hero -->
+  <section class="bg-[#1a1a1a] text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="font-display text-4xl sm:text-5xl font-extrabold mb-4">About Us</h1>
+      <p class="text-gray-300 text-lg max-w-2xl mx-auto">We're a passionate team of professionals dedicated to delivering exceptional results for our clients.</p>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="grid lg:grid-cols-2 gap-14 items-center">
+      <div>
+        <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Our Story</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-[#1a1a1a] mt-2 mb-6">From a Small Idea to a Trusted Partner</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Founded in 2010, Acme Corp started as a two-person consultancy with a simple mission: help businesses navigate the digital landscape with clarity and confidence. Over the years, we've grown into a full-service agency trusted by companies across Europe and beyond.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Our approach has always been the same — listen deeply, think creatively, and execute flawlessly. We don't believe in one-size-fits-all solutions. Every client gets a tailored strategy built around their unique challenges and ambitions.
+        </p>
+        <p class="text-gray-600 leading-relaxed">
+          Today, our diverse team of strategists, designers, developers, and analysts works side by side with clients to build lasting success.
+        </p>
+      </div>
+      <div>
+        <img
+          src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=700&q=80"
+          alt="Our team at work"
+          class="rounded-2xl shadow-xl w-full object-cover h-[400px]"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="bg-cream-200 py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-[#1a1a1a] mb-4">Our Core Values</h2>
+        <p class="text-gray-600 text-lg max-w-xl mx-auto">The principles that guide every decision we make.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {[
+          { icon: '🎯', title: 'Results-Driven', desc: 'We measure success by outcomes, not effort. Every action we take is tied to your goals.' },
+          { icon: '🤝', title: 'True Partnership', desc: 'We work with you, not just for you. Your wins are our wins.' },
+          { icon: '💡', title: 'Constant Innovation', desc: 'We stay ahead of the curve so your business always has the edge.' },
+          { icon: '🔍', title: 'Radical Transparency', desc: 'Honest communication. No surprises, no fluff — just clarity.' },
+        ].map(v => (
+          <div class="bg-cream-100 rounded-2xl p-8 shadow-sm border border-cream-300 text-center">
+            <div class="text-4xl mb-4">{v.icon}</div>
+            <h3 class="font-display font-bold text-[#1a1a1a] mb-2">{v.title}</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">{v.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="text-center mb-14">
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-[#1a1a1a] mb-4">Meet the Team</h2>
+      <p class="text-gray-600 text-lg max-w-xl mx-auto">The brilliant people behind Acme Corp's success.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+      {[
+        { name: 'Alex Müller', role: 'CEO & Founder', img: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80' },
+        { name: 'Julia Weber', role: 'Head of Design', img: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80' },
+        { name: 'Marco Bauer', role: 'Lead Developer', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80' },
+      ].map(member => (
+        <div class="text-center group">
+          <div class="overflow-hidden rounded-2xl mb-4">
+            <img
+              src={member.img}
+              alt={member.name}
+              class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <h3 class="font-display font-bold text-lg text-[#1a1a1a]">{member.name}</h3>
+          <p class="text-brand-600 text-sm font-medium">{member.role}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Google Reviews -->
+  <section class="bg-cream-200 py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Overall rating header -->
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center gap-3 mb-3">
+          <!-- Google "G" logo -->
+          <svg class="w-8 h-8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+          </svg>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-[#1a1a1a]">Google Reviews</h2>
+        </div>
+        <div class="flex items-center justify-center gap-3">
+          <span class="font-display text-5xl font-extrabold text-[#1a1a1a]">4.8</span>
+          <div>
+            <div class="flex gap-0.5 text-2xl text-[#FBBC05]">★★★★★</div>
+            <p class="text-gray-500 text-sm">Based on 47 Google reviews</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review cards -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          {
+            name: 'Markus Hofbauer',
+            date: 'March 2025',
+            stars: 5,
+            initials: 'MH',
+            color: 'bg-blue-500',
+            text: 'Absolutely outstanding service from start to finish. The team at Acme Corp understood our vision immediately and delivered a website that exceeded everything we hoped for. Highly professional, fast, and genuinely friendly. Can only recommend!'
+          },
+          {
+            name: 'Sandra Gruber',
+            date: 'February 2025',
+            stars: 5,
+            initials: 'SG',
+            color: 'bg-green-600',
+            text: 'We hired Acme Corp for a complete digital strategy overhaul and couldn\'t be happier. They were transparent about timelines and costs, proactive in communication, and the final results speak for themselves. Our online revenue has grown 40% since launch.'
+          },
+          {
+            name: 'Thomas Reiter',
+            date: 'January 2025',
+            stars: 5,
+            initials: 'TR',
+            color: 'bg-purple-600',
+            text: 'Five stars without hesitation. We had a very tight deadline and the Acme Corp team pulled through brilliantly. The quality of the work is top notch and they were always reachable when we had questions. A reliable partner you can count on.'
+          },
+          {
+            name: 'Eva Kerschbaumer',
+            date: 'December 2024',
+            stars: 5,
+            initials: 'EK',
+            color: 'bg-rose-500',
+            text: 'Worked with them on a brand identity project and was blown away by the creativity and professionalism. They really listened to what we wanted and translated it into something beautiful. The whole process was smooth and enjoyable.'
+          },
+          {
+            name: 'Daniel Steiner',
+            date: 'November 2024',
+            stars: 4,
+            initials: 'DS',
+            color: 'bg-amber-600',
+            text: 'Very good experience overall. The consulting work was insightful and led to concrete improvements in our sales funnel. Communication was excellent. I would have given 5 stars but the initial timeline was slightly delayed — however they were upfront about it and delivered quality work.'
+          },
+          {
+            name: 'Petra Winkler',
+            date: 'October 2024',
+            stars: 5,
+            initials: 'PW',
+            color: 'bg-teal-600',
+            text: 'Acme Corp built our e-commerce platform from scratch and it\'s been running flawlessly. The attention to detail in both design and functionality is remarkable. Our customers constantly compliment how easy the shop is to use. Worth every euro!'
+          },
+        ].map(review => (
+          <div class="bg-cream-100 rounded-2xl p-6 border border-cream-300 shadow-sm flex flex-col gap-4">
+            <!-- Reviewer -->
+            <div class="flex items-center gap-3">
+              <div class={`w-10 h-10 rounded-full ${review.color} flex items-center justify-center text-white font-bold text-sm flex-shrink-0`}>
+                {review.initials}
+              </div>
+              <div class="min-w-0">
+                <div class="font-semibold text-[#1a1a1a] text-sm truncate">{review.name}</div>
+                <div class="text-xs text-gray-400">{review.date}</div>
+              </div>
+              <!-- Google G -->
+              <svg class="w-5 h-5 ml-auto flex-shrink-0" viewBox="0 0 24 24">
+                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+              </svg>
+            </div>
+            <!-- Stars -->
+            <div class="flex gap-0.5 text-[#FBBC05] text-base">
+              {Array.from({length: review.stars}).map(() => '★').join('')}
+              {Array.from({length: 5 - review.stars}).map(() => '☆').join('')}
+            </div>
+            <!-- Text -->
+            <p class="text-gray-600 text-sm leading-relaxed">{review.text}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center mt-10">
+        <a
+          href="https://www.google.com/maps"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-cta"
+        >
+          See All Reviews on Google →
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

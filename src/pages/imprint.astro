@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Imprint" description="Legal information about Acme Corp.">
+
+  <section class="bg-[#1a1a1a] text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="font-display text-4xl sm:text-5xl font-extrabold mb-4">Imprint</h1>
+      <p class="text-brand-200 text-lg">Legal disclosure as required by Austrian law (§ 5 ECG)</p>
+    </div>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="bg-cream-100 rounded-2xl shadow-sm border border-cream-300 p-10 space-y-10">
+
+      <div>
+        <h2 class="font-display font-bold text-xl text-brand-950 mb-4">Company Details</h2>
+        <div class="space-y-2 text-gray-600 text-sm">
+          <p><span class="font-semibold text-gray-800">Company name:</span> Acme Corp GmbH</p>
+          <p><span class="font-semibold text-gray-800">Legal form:</span> Gesellschaft mit beschränkter Haftung (GmbH)</p>
+          <p><span class="font-semibold text-gray-800">Registered address:</span> Hauptstraße 42, 1010 Vienna, Austria</p>
+          <p><span class="font-semibold text-gray-800">Commercial register number:</span> FN 123456 a</p>
+          <p><span class="font-semibold text-gray-800">Court of registry:</span> Handelsgericht Wien</p>
+          <p><span class="font-semibold text-gray-800">VAT number:</span> ATU12345678</p>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="font-display font-bold text-xl text-brand-950 mb-4">Management</h2>
+        <p class="text-gray-600 text-sm">Alex Müller (Geschäftsführer)</p>
+      </div>
+
+      <div>
+        <h2 class="font-display font-bold text-xl text-brand-950 mb-4">Contact</h2>
+        <div class="space-y-2 text-gray-600 text-sm">
+          <p><span class="font-semibold text-gray-800">Phone:</span> +43 1 234 567 890</p>
+          <p><span class="font-semibold text-gray-800">Email:</span> <a href="mailto:hello@acmecorp.at" class="text-brand-600 hover:underline">hello@acmecorp.at</a></p>
+          <p><span class="font-semibold text-gray-800">Website:</span> <a href="/" class="text-brand-600 hover:underline">www.acmecorp.at</a></p>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="font-display font-bold text-xl text-brand-950 mb-4">Regulatory Authority</h2>
+        <p class="text-gray-600 text-sm">Wirtschaftskammer Wien (WKW)</p>
+      </div>
+
+      <div>
+        <h2 class="font-display font-bold text-xl text-brand-950 mb-4">Applicable Trade Regulations</h2>
+        <p class="text-gray-600 text-sm">Gewerbeordnung (GewO) – applicable Austrian trade regulations. Full text available at <a href="https://www.ris.bka.gv.at" target="_blank" rel="noopener" class="text-brand-600 hover:underline">ris.bka.gv.at</a>.</p>
+      </div>
+
+      <div>
+        <h2 class="font-display font-bold text-xl text-brand-950 mb-4">Disclaimer</h2>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          The content of this website has been prepared with the utmost care. However, we cannot guarantee the accuracy, completeness, or timeliness of the information provided. We are not responsible for the content of external links. The operators of linked pages are solely responsible for their content.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-display font-bold text-xl text-brand-950 mb-4">Copyright</h2>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          All content on this website (texts, images, graphics) is subject to copyright. Any reproduction, distribution, or public display requires prior written consent from Acme Corp GmbH.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>

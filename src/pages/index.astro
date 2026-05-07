@@ -1,0 +1,147 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Home" description="Acme Corp – Modern solutions for modern businesses.">
+
+  <!-- Hero -->
+  <section class="relative bg-[#1a1a1a] text-white overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-cream-200 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 right-20 w-96 h-96 bg-brand-300 rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 lg:py-36">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="inline-block px-4 py-1.5 bg-white/10 text-cream-200 text-xs font-semibold rounded-full mb-6 tracking-wider uppercase">Welcome to Acme Corp</span>
+          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+            Modern Solutions for <span class="text-brand-300">Modern Business</span>
+          </h1>
+          <p class="text-gray-300 text-lg leading-relaxed mb-8 max-w-lg">
+            We help companies grow with cutting-edge strategies, technology, and a dedicated team that genuinely cares about your success.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="/services" class="px-7 py-3.5 bg-cream-100 hover:bg-white text-[#1a1a1a] font-semibold rounded-xl transition-all shadow-lg">
+              Explore Services
+            </a>
+            <a href="/about" class="px-7 py-3.5 border border-white/30 hover:border-white text-white font-semibold rounded-xl transition-all">
+              About Us
+            </a>
+          </div>
+        </div>
+        <div class="hidden lg:block">
+          <img
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&q=80"
+            alt="Team collaborating"
+            class="rounded-2xl shadow-2xl w-full object-cover h-[420px]"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="bg-cream-200 border-b border-cream-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        {[
+          { value: '150+', label: 'Happy Clients' },
+          { value: '12+', label: 'Years Experience' },
+          { value: '300+', label: 'Projects Delivered' },
+          { value: '98%', label: 'Client Satisfaction' },
+        ].map(stat => (
+          <div>
+            <div class="font-display text-4xl font-extrabold text-[#1a1a1a] mb-1">{stat.value}</div>
+            <div class="text-sm text-gray-600 font-medium">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="text-center mb-14">
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-[#1a1a1a] mb-4">What We Offer</h2>
+      <p class="text-gray-600 text-lg max-w-xl mx-auto">From strategy to execution, we cover everything your business needs to thrive.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {[
+        { icon: '🚀', title: 'Strategy & Consulting', desc: 'Tailored roadmaps that align your vision with market opportunities and clear execution plans.' },
+        { icon: '💻', title: 'Digital Solutions', desc: 'Modern web, app, and software development built for performance and scalability.' },
+        { icon: '📊', title: 'Data & Analytics', desc: 'Turn raw data into actionable insights with our advanced analytics capabilities.' },
+        { icon: '🎨', title: 'Brand & Design', desc: 'Memorable identities and user experiences that make your brand stand out.' },
+        { icon: '🔒', title: 'Security & Compliance', desc: 'Protecting your business with industry-leading security practices and compliance support.' },
+        { icon: '🤝', title: 'Ongoing Support', desc: 'Dedicated partnerships that ensure your success long after the project is complete.' },
+      ].map(item => (
+        <div class="group p-8 rounded-2xl border border-cream-300 hover:border-brand-300 hover:shadow-lg hover:-translate-y-1 transition-all bg-white">
+          <div class="text-3xl mb-4">{item.icon}</div>
+          <h3 class="font-display font-bold text-lg text-[#1a1a1a] mb-2">{item.title}</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+    <div class="text-center mt-10">
+      <a href="/services" class="btn-cta">View All Services →</a>
+    </div>
+  </section>
+
+  <!-- Image break -->
+  <section class="relative h-72 sm:h-96 overflow-hidden">
+    <img
+      src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=80"
+      alt="Modern office"
+      class="w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-[#1a1a1a]/65 flex items-center justify-center">
+      <div class="text-center text-white px-4">
+        <h2 class="font-display text-3xl sm:text-4xl font-bold mb-4">Ready to Transform Your Business?</h2>
+        <a href="/contact-form" class="inline-block px-8 py-3.5 bg-cream-100 hover:bg-white text-[#1a1a1a] font-semibold rounded-xl transition-all">
+          Start the Conversation
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="bg-cream-200 py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-[#1a1a1a] mb-4">What Our Clients Say</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        {[
+          { quote: 'Acme Corp completely transformed our digital presence. The results exceeded every expectation.', name: 'Sarah M.', role: 'CEO, TechStart GmbH' },
+          { quote: 'Professional, creative, and incredibly reliable. Our go-to partner for everything digital.', name: 'Thomas K.', role: 'Marketing Director, Bloom AG' },
+          { quote: "Their strategic consulting helped us unlock revenue streams we didn't even know existed.", name: 'Lena V.', role: 'Founder, NovaBrand' },
+        ].map(t => (
+          <div class="bg-cream-100 rounded-2xl p-8 shadow-sm border border-cream-300">
+            <div class="text-brand-500 text-2xl mb-4">★★★★★</div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-6 italic">"{t.quote}"</p>
+            <div>
+              <div class="font-semibold text-[#1a1a1a]">{t.name}</div>
+              <div class="text-xs text-gray-400">{t.role}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+    <div class="bg-[#1a1a1a] rounded-3xl px-8 py-16 text-white">
+      <h2 class="font-display text-3xl sm:text-4xl font-bold mb-4">Let's Build Something Great Together</h2>
+      <p class="text-gray-300 text-lg mb-8 max-w-xl mx-auto">Join over 150 businesses that trust Acme Corp to bring their vision to life.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/contact-form" class="px-8 py-3.5 bg-cream-100 hover:bg-white text-[#1a1a1a] font-semibold rounded-xl transition-all shadow">
+          Get a Free Quote
+        </a>
+        <a href="/contact" class="px-8 py-3.5 border border-white/30 hover:border-white text-white font-semibold rounded-xl transition-all">
+          Contact Info
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

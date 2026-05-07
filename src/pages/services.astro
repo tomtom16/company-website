@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Services" description="Explore the full range of services offered by Acme Corp.">
+
+  <section class="bg-[#1a1a1a] text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="font-display text-4xl sm:text-5xl font-extrabold mb-4">Our Services</h1>
+      <p class="text-gray-300 text-lg max-w-2xl mx-auto">Comprehensive solutions tailored to help your business achieve its full potential.</p>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="space-y-20">
+
+      <!-- Service 1 -->
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80" alt="Strategy" class="rounded-2xl shadow-xl w-full h-72 object-cover" />
+        <div>
+          <span class="inline-block px-3 py-1 bg-brand-100 text-brand-700 rounded-full text-xs font-semibold mb-4">01 — Strategy</span>
+          <h2 class="font-display text-3xl font-bold text-brand-950 mb-4">Strategy & Consulting</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Our strategic consulting practice helps organizations define clear objectives, identify growth opportunities, and build competitive advantages that last.
+          </p>
+          <ul class="space-y-2 text-gray-600 text-sm">
+            {['Market entry analysis', 'Business model design', 'Competitive benchmarking', 'Growth roadmaps'].map(item => (
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-500 inline-block"></span>{item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="order-2 lg:order-1">
+          <span class="inline-block px-3 py-1 bg-accent-400/20 text-accent-600 rounded-full text-xs font-semibold mb-4">02 — Digital</span>
+          <h2 class="font-display text-3xl font-bold text-brand-950 mb-4">Digital Solutions</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            From sleek websites to powerful web applications, our engineering team builds digital products that delight users and scale effortlessly.
+          </p>
+          <ul class="space-y-2 text-gray-600 text-sm">
+            {['Web development', 'Mobile applications', 'E-commerce solutions', 'Performance optimization'].map(item => (
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-500 inline-block"></span>{item}</li>
+            ))}
+          </ul>
+        </div>
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=700&q=80" alt="Digital" class="rounded-2xl shadow-xl w-full h-72 object-cover order-1 lg:order-2" />
+      </div>
+
+      <!-- Service 3 -->
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80" alt="Analytics" class="rounded-2xl shadow-xl w-full h-72 object-cover" />
+        <div>
+          <span class="inline-block px-3 py-1 bg-brand-100 text-brand-700 rounded-full text-xs font-semibold mb-4">03 — Analytics</span>
+          <h2 class="font-display text-3xl font-bold text-brand-950 mb-4">Data & Analytics</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            We help you understand your business, your customers, and your market with clarity through custom dashboards, reporting, and advanced analytics.
+          </p>
+          <ul class="space-y-2 text-gray-600 text-sm">
+            {['Business intelligence', 'Custom dashboards', 'Customer analytics', 'Predictive modelling'].map(item => (
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-500 inline-block"></span>{item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Pricing teaser -->
+  <section class="bg-cream-200 py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-brand-950 mb-4">Flexible Engagements</h2>
+      <p class="text-gray-500 text-lg max-w-xl mx-auto mb-10">Whether you need a one-time project or an ongoing partnership, we have a model that works for you.</p>
+      <div class="grid sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        {[
+          { name: 'Project', desc: 'Defined scope, fixed timeline. Perfect for one-time initiatives.', cta: 'Get a Quote' },
+          { name: 'Retainer', desc: 'Ongoing support and strategic guidance on a monthly basis.', cta: 'Learn More', featured: true },
+          { name: 'Consulting', desc: 'Expert advice on specific challenges — as you need it.', cta: 'Book a Call' },
+        ].map(p => (
+          <div class={`rounded-2xl p-8 shadow-sm border ${p.featured ? 'bg-[#1a1a1a] border-[#1a1a1a] text-white' : 'bg-white border-gray-100'}`}>
+            <h3 class={`font-display font-bold text-xl mb-3 ${p.featured ? 'text-white' : 'text-brand-900'}`}>{p.name}</h3>
+            <p class={`text-sm leading-relaxed mb-6 ${p.featured ? 'text-brand-200' : 'text-gray-500'}`}>{p.desc}</p>
+            <a href="/contact-form" class={`inline-block px-6 py-2.5 rounded-lg font-semibold text-sm transition-all ${p.featured ? 'bg-cream-100 text-[#1a1a1a] hover:bg-white' : 'bg-[#1a1a1a] text-white hover:[#2d2d2d]'}`}>
+              {p.cta}
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
