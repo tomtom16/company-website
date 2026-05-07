@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const mapsKey = import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY;
+const placeId = import.meta.env.PUBLIC_GOOGLE_PLACE_ID;
+const mapsUrl = `https://www.google.com/maps/embed/v1/place?key=${mapsKey}&q=place_id:${placeId}`;
 ---
 
 <BaseLayout title="Contact" description="Get in touch with Acme Corp – we'd love to hear from you.">
@@ -73,7 +76,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           loading="lazy"
           allowfullscreen
           referrerpolicy="no-referrer-when-downgrade"
-          data-src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCTpaGmDUTlHdwgfT0keKjChSzBZKx44HQ&q=place_id:ChIJaX6xB90FbUcRU58MeUXU3KQ"
+          data-src={mapsUrl}
         ></iframe>
       </div>
     </div>
