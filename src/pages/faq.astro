@@ -1,0 +1,181 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const faqs = [
+  {
+    category: "Termin & Ablauf",
+    items: [
+      {
+        q: "Wie kann ich einen Termin vereinbaren?",
+        a: "Termine können bequem über unser Online-Buchungssystem unter <a href='https://patient.latido.at/arzt/_Scherz' target='_blank' rel='noopener' class='text-brand-700 hover:underline'>patient.latido.at</a> gebucht werden. Alternativ erreichen Sie uns telefonisch unter 0677 623 11 552 (Mo–Fr, 8–18 Uhr) oder per E-Mail an termin@hautmitherz.at."
+      },
+      {
+        q: "Wie lange dauert ein typischer Termin?",
+        a: "Ein Erstgespräch dauert in der Regel 30–45 Minuten, da wir uns ausreichend Zeit für eine gründliche Anamnese und Untersuchung nehmen. Folgetermine sind je nach Behandlung kürzer – meist 15–30 Minuten."
+      },
+      {
+        q: "Was soll ich zum ersten Termin mitbringen?",
+        a: "Bitte bringen Sie Ihren Lichtbildausweis, Ihre e-Card sowie – falls vorhanden – frühere Befunde, Medikamentenlisten oder Fotos von Hautveränderungen mit. Das hilft uns, von Anfang an ein vollständiges Bild Ihrer Hautgeschichte zu bekommen."
+      },
+      {
+        q: "Wie kurzfristig kann ich einen Termin absagen oder verschieben?",
+        a: "Bitte sagen Sie Termine mindestens 24 Stunden vorher ab, damit wir den Slot für andere Patientinnen freigeben können. Eine Absage ist telefonisch oder per E-Mail möglich."
+      },
+    ]
+  },
+  {
+    category: "Vorsorge & Diagnose",
+    items: [
+      {
+        q: "Ab wann empfiehlt sich eine regelmäßige Hautkrebs-Vorsorge?",
+        a: "Grundsätzlich empfehle ich ab dem 18. Lebensjahr eine jährliche Ganzkörperuntersuchung. Bei erhöhtem Risiko (familiäre Vorbelastung, heller Hauttyp, viele Muttermale) sollte mit Vorsorgeuntersuchungen noch früher begonnen werden."
+      },
+      {
+        q: "Wie läuft ein Hautkrebs-Screening ab?",
+        a: "Bei der Vorsorgeuntersuchung wird die gesamte Körperoberfläche systematisch mit einem digitalen Dermatoskop untersucht. Auffällige Pigmentmale werden fotografisch dokumentiert und bei Bedarf im Verlauf kontrolliert oder entfernt. Die Untersuchung ist schmerzfrei und dauert ca. 20–30 Minuten."
+      },
+      {
+        q: "Wird die Vorsorgeuntersuchung von der Krankenkasse übernommen?",
+        a: "Das Hautkrebsscreening wird von den österreichischen Krankenkassen im Rahmen der Vorsorgeuntersuchung (ab 18 Jahren alle 2 Jahre) teilweise erstattet. Ich empfehle, vorab bei Ihrer Kasse nachzufragen. Als Wahlärztin stelle ich Ihnen eine Honorarnote aus, die Sie zur Kostenerstattung einreichen können."
+      },
+      {
+        q: "Ich habe eine neue Hautveränderung bemerkt – wie dringend sollte ich einen Termin machen?",
+        a: "Bei neu aufgetretenen oder sich verändernden Pigmentmalen, Wunden die nicht heilen, oder plötzlich auftretenden Hautveränderungen empfehle ich, zeitnah einen Termin zu vereinbaren. Im Zweifelsfall lieber früher als später – wir nehmen uns die Zeit für eine sorgfältige Beurteilung."
+      },
+    ]
+  },
+  {
+    category: "Ästhetische Behandlungen",
+    items: [
+      {
+        q: "Wie lange hält eine Botox-Behandlung?",
+        a: "Die Wirkung von Botulinum-Toxin hält in der Regel 3–6 Monate an, abhängig von der behandelten Region, der Dosierung und dem individuellen Stoffwechsel. Mit regelmäßigen Behandlungen kann die Wirkungsdauer sich erfahrungsgemäß verlängern."
+      },
+      {
+        q: "Sind Filler-Behandlungen schmerzhaft?",
+        a: "Die meisten modernen Hyaluronsäure-Filler enthalten bereits ein Lokalanästhetikum. Zusätzlich kann vor der Behandlung eine Betäubungscreme aufgetragen werden. Die meisten Patientinnen empfinden den Eingriff als gut tolerierbar."
+      },
+      {
+        q: "Wann sehe ich die Ergebnisse einer Laserbehandlung?",
+        a: "Das hängt stark von der Art der Behandlung ab. Bei Gefäßlasern oder Pigmentlasern sind erste Ergebnisse oft nach 1–2 Wochen sichtbar. Bei Hautverjüngungsbehandlungen zeigt sich das optimale Ergebnis meist nach 3–6 Monaten, da Kollagenaufbau Zeit braucht."
+      },
+      {
+        q: "Kann ich nach einer ästhetischen Behandlung sofort wieder arbeiten gehen?",
+        a: "Bei Botox und den meisten Filler-Behandlungen ist im Alltag sofort danach möglich. Leichte Rötungen oder kleine Schwellungen können für 1–2 Tage auftreten. Bei Laserbehandlungen kann je nach Intensität eine kurze Erholungszeit von wenigen Tagen einzuplanen sein – ich bespreche das vorab detailliert mit Ihnen."
+      },
+    ]
+  },
+  {
+    category: "Medizinische Dermatologie",
+    items: [
+      {
+        q: "Meine Akne kommt immer wieder – was kann dauerhaft helfen?",
+        a: "Akne hat viele Ursachen – hormonell, genetisch, oder durch äußere Faktoren. In der Praxis erstellen wir nach einer gründlichen Analyse einen individuellen Therapieplan, der topische Präparate, systemische Therapien (z. B. orale Antibiotika oder hormonelle Behandlungen) und Pflegeempfehlungen kombinieren kann. Geduld und Konsequenz sind dabei entscheidend."
+      },
+      {
+        q: "Ich leide unter Neurodermitis – was sind meine Optionen?",
+        a: "Neurodermitis (atopische Dermatitis) ist eine chronische Erkrankung, die sich gut managen lässt. Neben klassischen Therapien (Kortison, Calcineurin-Inhibitoren) stehen heute auch innovative Biologika und JAK-Inhibitoren zur Verfügung. Wichtig ist außerdem ein individuell abgestimmtes Basispflegeprogramm."
+      },
+      {
+        q: "Kann ich bei Ihnen einen Allergietest machen?",
+        a: "Ja, in meiner Praxis führe ich Prick-Tests (Inhalations- und Nahrungsmittelallergene) sowie Epikutantests (Kontaktallergien) durch. Das Ergebnis besprechen wir ausführlich, inklusive Empfehlungen zur Allergenkarenz und Therapie."
+      },
+    ]
+  },
+  {
+    category: "Praxis & Organisation",
+    items: [
+      {
+        q: "Sind Sie Wahlärztin oder Kassenärztin?",
+        a: "Ich bin Wahlärztin. Das bedeutet, Sie zahlen das Honorar direkt in der Praxis und erhalten eine Honorarnote, die Sie bei Ihrer österreichischen Krankenkasse zur Rückerstattung (üblicherweise 80 % des Kassentarifs) einreichen können. Privatversicherungen übernehmen häufig den vollen Betrag – bitte prüfen Sie Ihre Polizze."
+      },
+      {
+        q: "Wie kann ich eine Honorarnote für die Krankenkasse erhalten?",
+        a: "Eine detaillierte Honorarnote erhalten Sie nach jeder Behandlung automatisch – entweder direkt ausgedruckt in der Praxis oder per E-Mail. Diese können Sie bei Ihrer Krankenkasse oder Privatversicherung zur Erstattung einreichen."
+      },
+      {
+        q: "Gibt es Parkmöglichkeiten in der Nähe der Praxis?",
+        a: "Die genaue Adresse und Anfahrtsbeschreibung erhalten Sie nach Ihrer Terminbestätigung. Die Praxis ist gut mit öffentlichen Verkehrsmitteln erreichbar. Parkplätze sind in der Umgebung verfügbar."
+      },
+    ]
+  },
+];
+---
+
+<BaseLayout title="FAQ" description="Häufig gestellte Fragen an Haut mit Herz – Dr. Scherz, Dermatologin in Wien.">
+
+  <section class="bg-[#1a1a1a] text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="font-display text-4xl sm:text-5xl font-extrabold mb-4">Häufige Fragen</h1>
+      <p class="text-gray-300 text-lg max-w-2xl mx-auto">Antworten auf die Fragen, die uns am häufigsten gestellt werden. Finden Sie Ihre Antwort nicht? Schreiben Sie uns gerne.</p>
+    </div>
+  </section>
+
+  <!-- Jump links -->
+  <section class="bg-cream-200 border-b border-cream-300 sticky top-16 z-40">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-3 overflow-x-auto">
+      <div class="flex gap-2 min-w-max">
+        {faqs.map((cat, i) => (
+          <a href={`#cat-${i}`} class="px-4 py-1.5 rounded-full text-xs font-semibold border border-cream-300 bg-cream-100 hover:bg-[#1a1a1a] hover:text-white hover:border-[#1a1a1a] transition-all whitespace-nowrap">
+            {cat.category}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-16">
+    {faqs.map((cat, ci) => (
+      <div id={`cat-${ci}`} class="scroll-mt-32">
+        <h2 class="font-display text-2xl font-bold text-[#1a1a1a] mb-6 pb-3 border-b-2 border-cream-300">{cat.category}</h2>
+        <div class="space-y-3">
+          {cat.items.map((item, qi) => (
+            <div class="bg-white border border-cream-300 rounded-2xl overflow-hidden shadow-sm">
+              <button
+                class="faq-toggle w-full text-left px-6 py-5 flex items-center justify-between gap-4 hover:bg-cream-100 transition-colors"
+                aria-expanded="false"
+                data-target={`faq-${ci}-${qi}`}
+              >
+                <span class="font-semibold text-[#1a1a1a] text-sm sm:text-base">{item.q}</span>
+                <svg class="faq-icon w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              <div id={`faq-${ci}-${qi}`} class="faq-body hidden px-6 pb-5">
+                <p class="text-gray-600 text-sm leading-relaxed" set:html={item.a} />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-cream-200 py-16">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-2xl sm:text-3xl font-bold text-[#1a1a1a] mb-3">Ihre Frage ist nicht dabei?</h2>
+      <p class="text-gray-600 mb-8">Kontaktieren Sie mich direkt – ich nehme mir gerne Zeit für Ihre persönlichen Anliegen.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/contact-form" class="btn-cta">Frage stellen →</a>
+        <a href="https://patient.latido.at/arzt/_Scherz" target="_blank" rel="noopener" class="btn-cta-outline">Termin vereinbaren</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.querySelectorAll('.faq-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = (btn as HTMLElement).dataset.target!;
+        const body = document.getElementById(targetId)!;
+        const icon = btn.querySelector('.faq-icon') as HTMLElement;
+        const isOpen = !body.classList.contains('hidden');
+
+        body.classList.toggle('hidden', isOpen);
+        icon.style.transform = isOpen ? '' : 'rotate(180deg)';
+        btn.setAttribute('aria-expanded', String(!isOpen));
+      });
+    });
+  </script>
+
+</BaseLayout>
