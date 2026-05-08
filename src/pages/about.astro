@@ -5,7 +5,7 @@ const PLACE_ID = import.meta.env.PUBLIC_GOOGLE_PLACE_ID;
 const PLACE_LINK = `https://www.google.com/maps/place/?q=place_id:${PLACE_ID}`
 ---
 
-<BaseLayout title="Über mich" description="Lernen Sie Dr. Scherz kennen – Ihre Dermatologin mit Herz in Wien.">
+<BaseLayout title="Über mich" description="Lernen Sie Dr. Scherz kennen – Ihr Dermatologe mit Herz in Wien.">
 
   <section class="bg-[#1a1a1a] text-white py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -18,8 +18,8 @@ const PLACE_LINK = `https://www.google.com/maps/place/?q=place_id:${PLACE_ID}`
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
     <div class="grid lg:grid-cols-2 gap-14 items-center">
       <div>
-        <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Ihre Ärztin</span>
-        <h2 class="font-display text-3xl sm:text-4xl font-bold text-[#1a1a1a] mt-2 mb-6">Dr. med. Scherz</h2>
+        <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Ihr Arzt</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-[#1a1a1a] mt-2 mb-6">Dr. Thomas Scherz, PhD, FEBDV</h2>
         <p class="text-gray-600 leading-relaxed mb-4">
           Nach meinem Medizinstudium an der Universität Wien spezialisierte ich mich auf Dermatologie und Venerologie. Meine Ausbildung führte mich durch renommierte Hautkliniken in Wien und ermöglichte mir ein breites Spektrum an klinischer Erfahrung – von komplexen Autoimmunerkrankungen der Haut bis zu feinsten ästhetischen Eingriffen.
         </p>
@@ -30,7 +30,7 @@ const PLACE_LINK = `https://www.google.com/maps/place/?q=place_id:${PLACE_ID}`
           Neben meiner klinischen Tätigkeit bilde ich mich regelmäßig auf internationalen Fachkongressen weiter, um Ihnen stets die neuesten und sichersten Behandlungsmethoden anbieten zu können.
         </p>
         <div class="mt-6 flex flex-wrap gap-3">
-          {['Fachärztin für Dermatologie', 'Ästhetische Medizin', 'Lasermedizin', 'Allergologie'].map(tag => (
+          {['Facharzt für Dermatologie', 'Ästhetische Medizin', 'Lasermedizin', 'Allergologie'].map(tag => (
             <span class="px-3 py-1 bg-cream-200 text-brand-800 text-xs font-semibold rounded-full border border-cream-300">{tag}</span>
           ))}
         </div>
@@ -38,7 +38,7 @@ const PLACE_LINK = `https://www.google.com/maps/place/?q=place_id:${PLACE_ID}`
       <div>
         <img
           src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=700&q=80"
-          alt="Dr. Scherz – Ihre Dermatologin"
+          alt="Dr. Scherz – Ihr Dermatologe"
           class="rounded-2xl shadow-xl w-full object-cover h-[460px]"
         />
       </div>
