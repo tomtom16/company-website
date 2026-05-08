@@ -2,12 +2,12 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Imprint" description="Legal information about Acme Corp.">
+<BaseLayout title="Impressum" description="Impressum – Haut mit Herz, Dr. Scherz, Wien.">
 
   <section class="bg-[#1a1a1a] text-white py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="font-display text-4xl sm:text-5xl font-extrabold mb-4">Imprint</h1>
-      <p class="text-brand-200 text-lg">Legal disclosure as required by Austrian law (§ 5 ECG)</p>
+      <h1 class="font-display text-4xl sm:text-5xl font-extrabold mb-4">Impressum</h1>
+      <p class="text-gray-300 text-lg">Offenlegung gemäß § 25 MedienG und § 5 ECG</p>
     </div>
   </section>
 
@@ -15,52 +15,43 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="bg-cream-100 rounded-2xl shadow-sm border border-cream-300 p-10 space-y-10">
 
       <div>
-        <h2 class="font-display font-bold text-xl text-brand-950 mb-4">Company Details</h2>
+        <h2 class="font-display font-bold text-xl text-[#1a1a1a] mb-4">Betreiberin der Website</h2>
         <div class="space-y-2 text-gray-600 text-sm">
-          <p><span class="font-semibold text-gray-800">Company name:</span> Acme Corp GmbH</p>
-          <p><span class="font-semibold text-gray-800">Legal form:</span> Gesellschaft mit beschränkter Haftung (GmbH)</p>
-          <p><span class="font-semibold text-gray-800">Registered address:</span> Hauptstraße 42, 1010 Vienna, Austria</p>
-          <p><span class="font-semibold text-gray-800">Commercial register number:</span> FN 123456 a</p>
-          <p><span class="font-semibold text-gray-800">Court of registry:</span> Handelsgericht Wien</p>
-          <p><span class="font-semibold text-gray-800">VAT number:</span> ATU12345678</p>
+          <p><span class="font-semibold text-gray-800">Name:</span> Dr. med. Scherz</p>
+          <p><span class="font-semibold text-gray-800">Bezeichnung:</span> Haut mit Herz – Ordination für Dermatologie &amp; Ästhetik</p>
+          <p><span class="font-semibold text-gray-800">Standort:</span> Wien, Österreich</p>
         </div>
       </div>
 
       <div>
-        <h2 class="font-display font-bold text-xl text-brand-950 mb-4">Management</h2>
-        <p class="text-gray-600 text-sm">Alex Müller (Geschäftsführer)</p>
-      </div>
-
-      <div>
-        <h2 class="font-display font-bold text-xl text-brand-950 mb-4">Contact</h2>
+        <h2 class="font-display font-bold text-xl text-[#1a1a1a] mb-4">Kontakt</h2>
         <div class="space-y-2 text-gray-600 text-sm">
-          <p><span class="font-semibold text-gray-800">Phone:</span> +43 1 234 567 890</p>
-          <p><span class="font-semibold text-gray-800">Email:</span> <a href="mailto:hello@acmecorp.at" class="text-brand-600 hover:underline">hello@acmecorp.at</a></p>
-          <p><span class="font-semibold text-gray-800">Website:</span> <a href="/" class="text-brand-600 hover:underline">www.acmecorp.at</a></p>
+          <p><span class="font-semibold text-gray-800">Telefon:</span> <a href="tel:+436776231552" class="text-brand-700 hover:underline">0677 623 11 552</a></p>
+          <p><span class="font-semibold text-gray-800">E-Mail:</span> <a href="mailto:termin@hautmitherz.at" class="text-brand-700 hover:underline">termin@hautmitherz.at</a></p>
+          <p><span class="font-semibold text-gray-800">Website:</span> <a href="/" class="text-brand-700 hover:underline">www.hautmitherz.at</a></p>
         </div>
       </div>
 
       <div>
-        <h2 class="font-display font-bold text-xl text-brand-950 mb-4">Regulatory Authority</h2>
-        <p class="text-gray-600 text-sm">Wirtschaftskammer Wien (WKW)</p>
+        <h2 class="font-display font-bold text-xl text-[#1a1a1a] mb-4">Berufsrecht &amp; Aufsichtsbehörde</h2>
+        <div class="space-y-2 text-gray-600 text-sm">
+          <p><span class="font-semibold text-gray-800">Berufsbezeichnung:</span> Fachärztin für Dermatologie und Venerologie (verliehen in Österreich)</p>
+          <p><span class="font-semibold text-gray-800">Kammer:</span> Österreichische Ärztekammer (ÖÄK) – <a href="https://www.aerztekammer.at" target="_blank" rel="noopener" class="text-brand-700 hover:underline">www.aerztekammer.at</a></p>
+          <p><span class="font-semibold text-gray-800">Anzuwendendes Recht:</span> Ärztegesetz 1998 (ÄrzteG), abrufbar unter <a href="https://www.ris.bka.gv.at" target="_blank" rel="noopener" class="text-brand-700 hover:underline">ris.bka.gv.at</a></p>
+        </div>
       </div>
 
       <div>
-        <h2 class="font-display font-bold text-xl text-brand-950 mb-4">Applicable Trade Regulations</h2>
-        <p class="text-gray-600 text-sm">Gewerbeordnung (GewO) – applicable Austrian trade regulations. Full text available at <a href="https://www.ris.bka.gv.at" target="_blank" rel="noopener" class="text-brand-600 hover:underline">ris.bka.gv.at</a>.</p>
-      </div>
-
-      <div>
-        <h2 class="font-display font-bold text-xl text-brand-950 mb-4">Disclaimer</h2>
+        <h2 class="font-display font-bold text-xl text-[#1a1a1a] mb-4">Haftungsausschluss</h2>
         <p class="text-gray-600 text-sm leading-relaxed">
-          The content of this website has been prepared with the utmost care. However, we cannot guarantee the accuracy, completeness, or timeliness of the information provided. We are not responsible for the content of external links. The operators of linked pages are solely responsible for their content.
+          Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte wird jedoch keine Gewähr übernommen. Die auf dieser Website bereitgestellten Informationen ersetzen keinen ärztlichen Rat und keine ärztliche Behandlung. Für die Inhalte verlinkter externer Seiten sind ausschließlich deren Betreiber verantwortlich.
         </p>
       </div>
 
       <div>
-        <h2 class="font-display font-bold text-xl text-brand-950 mb-4">Copyright</h2>
+        <h2 class="font-display font-bold text-xl text-[#1a1a1a] mb-4">Urheberrecht</h2>
         <p class="text-gray-600 text-sm leading-relaxed">
-          All content on this website (texts, images, graphics) is subject to copyright. Any reproduction, distribution, or public display requires prior written consent from Acme Corp GmbH.
+          Die auf dieser Website veröffentlichten Inhalte (Texte, Bilder, Grafiken) unterliegen dem österreichischen Urheberrecht. Jede Vervielfältigung, Verbreitung oder öffentliche Zugänglichmachung bedarf der vorherigen schriftlichen Zustimmung von Dr. med. Scherz.
         </p>
       </div>
 

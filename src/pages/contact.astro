@@ -5,23 +5,22 @@ const placeId = import.meta.env.PUBLIC_GOOGLE_PLACE_ID;
 const mapsUrl = `https://www.google.com/maps/embed/v1/place?key=${mapsKey}&q=place_id:${placeId}`;
 ---
 
-<BaseLayout title="Contact" description="Get in touch with Acme Corp – we'd love to hear from you.">
+<BaseLayout title="Kontakt" description="Kontaktieren Sie Haut mit Herz – Ihr Dermatologe in Wien.">
 
   <section class="bg-[#1a1a1a] text-white py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="font-display text-4xl sm:text-5xl font-extrabold mb-4">Get in Touch</h1>
-      <p class="text-gray-300 text-lg max-w-2xl mx-auto">We'd love to hear about your project. Reach out and we'll get back to you within one business day.</p>
+      <h1 class="font-display text-4xl sm:text-5xl font-extrabold mb-4">Kontakt</h1>
+      <p class="text-gray-300 text-lg max-w-2xl mx-auto">Wir freuen uns auf Ihre Nachricht. Terminanfragen bitte bevorzugt über unser Online-Buchungssystem.</p>
     </div>
   </section>
 
   <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
 
-    <!-- Contact info cards -->
     <div class="grid md:grid-cols-3 gap-8 mb-16">
       {[
-        { icon: '📍', title: 'Address', lines: ['Hauptstraße 42', '1010 Vienna, Austria'] },
-        { icon: '📞', title: 'Phone', lines: ['+43 1 234 567 890', 'Mon–Fri, 9:00–18:00'] },
-        { icon: '✉️', title: 'Email', lines: ['hello@acmecorp.at', 'We reply within 24h'] },
+        { icon: '📱', title: 'Telefon', lines: ['0677 623 11 552', 'Mo–Fr, 8:00–18:00 Uhr'] },
+        { icon: '✉️', title: 'E-Mail', lines: ['termin@hautmitherz.at', 'Antwort innerhalb von 24h'] },
+        { icon: '📍', title: 'Adresse', lines: ['Brünner Straße 70', 'Stiege 2 / 501 – Endo Nord', '1210 Wien'] },
       ].map(c => (
         <div class="bg-white rounded-2xl p-8 shadow-sm border border-cream-300 text-center">
           <div class="text-4xl mb-4">{c.icon}</div>
@@ -31,59 +30,67 @@ const mapsUrl = `https://www.google.com/maps/embed/v1/place?key=${mapsKey}&q=pla
       ))}
     </div>
 
+    <!-- Opening hours -->
+    <div class="bg-white rounded-2xl border border-cream-300 shadow-sm overflow-hidden mb-14">
+      <div class="px-6 py-4 bg-cream-200 border-b border-cream-300 items-center justify-center text-center">
+        <h3 class="font-display font-bold text-[#1a1a1a]">🕐 Öffnungszeiten</h3>
+        <p class="text-gray-600 text-sm mt-2">nach Terminvereinbarung</p>
+      </div>
+      <!--
+      <table class="w-full text-sm">
+        <tbody>
+          {[
+            { day: 'Mittwoch', hours: '09:00 – 17:00' },
+            { day: 'Donnerstag', hours: '09:00 – 17:00' },
+            { day: 'Freitag', hours: '09:00 – 15:00' },
+          ].map((row, i) => (
+            <tr class={i < 6 ? 'border-b border-cream-200' : ''}>
+              <td class="px-6 py-3 font-medium text-gray-700 bg-cream-100 w-1/2">{row.day}</td>
+              <td class={`px-6 py-3 ${row.hours === 'Geschlossen' ? 'text-gray-400 italic' : 'text-[#1a1a1a] font-semibold'}`}>{row.hours}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      -->
+    </div>
+
     <!-- Google Maps with consent gate -->
     <div class="rounded-2xl overflow-hidden shadow-lg border border-cream-300">
-
-      <!-- Consent screen (shown by default) -->
       <div id="map-consent" class="bg-cream-200 p-10 flex flex-col items-center justify-center text-center min-h-[360px] gap-6">
         <div class="w-16 h-16 rounded-full bg-white shadow flex items-center justify-center">
-          <!-- Google Maps pin icon -->
           <svg class="w-8 h-8 text-[#EA4335]" fill="currentColor" viewBox="0 0 24 24">
             <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
           </svg>
         </div>
         <div>
-          <h3 class="font-display font-bold text-xl text-[#1a1a1a] mb-2">Show Map</h3>
-          <p class="text-gray-600 text-sm leading-relaxed max-w-md">
-            This map is powered by <strong>Google Maps</strong>. Loading it will send your IP address and browser data to Google LLC (USA) and is subject to
-            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="text-brand-700 underline hover:text-brand-800">Google's Privacy Policy</a>.
+          <h3 class="font-display font-bold text-xl text-[#1a1a1a] mb-2">Karte anzeigen</h3>
+          <p class="text-gray-600 text-sm mt-2">
+            Diese Karte wird von <strong>Google Maps</strong> bereitgestellt. </p>
+          <p class="text-gray-600 text-sm mt-2">Das Laden überträgt Ihre IP-Adresse und Browser-Daten<br />an Google LLC (USA) gemäß der
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="text-brand-700 underline">Google Datenschutzerklärung</a>.
           </p>
-          <p class="text-gray-500 text-xs mt-2">
-            By clicking below you consent to this data transfer under Art. 49(1)(a) GDPR.
-          </p>
+          <p class="text-gray-500 text-xs mt-2">Mit dem Klick auf „Karte laden" stimmen Sie dieser Datenübertragung gemäß Art. 49 Abs. 1 lit. a DSGVO zu.</p>
         </div>
         <div class="flex flex-wrap gap-3 justify-center">
-          <button
-            id="accept-map"
-            class="px-7 py-3 bg-[#1a1a1a] hover:bg-[#2d2d2d] text-white font-semibold rounded-xl transition-all text-sm"
-          >
-            Accept & Show Map
+          <button id="accept-map" class="px-7 py-3 bg-[#1a1a1a] hover:bg-[#2d2d2d] text-white font-semibold rounded-xl transition-all text-sm">
+            Karte laden &amp; zustimmen
           </button>
           <a href="https://www.google.com/maps/place/?q=place_id:ChIJaX6xB90FbUcRU58MeUXU3KQ" target="_blank" rel="noopener"
             class="px-7 py-3 border border-gray-300 text-gray-600 hover:border-[#1a1a1a] hover:text-[#1a1a1a] font-semibold rounded-xl transition-all text-sm">
-            Open in Google Maps ↗
+            In Google Maps öffnen ↗
           </a>
         </div>
       </div>
-
-      <!-- Map iframe (hidden until accepted) -->
       <div id="map-frame" class="hidden h-[360px]">
-        <iframe
-          id="gmap"
-          width="100%"
-          height="100%"
-          style="border:0"
-          loading="lazy"
-          allowfullscreen
-          referrerpolicy="no-referrer-when-downgrade"
+        <iframe id="gmap" width="100%" height="100%" style="border:0" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
           data-src={mapsUrl}
         ></iframe>
       </div>
     </div>
 
     <div class="mt-12 text-center">
-      <p class="text-gray-600 mb-4">Prefer to send a message directly?</p>
-      <a href="/contact-form" class="btn-cta">Go to Contact Form →</a>
+      <p class="text-gray-600 mb-4">Lieber eine schriftliche Anfrage stellen?</p>
+      <a href="/contact-form" class="btn-cta">Zum Kontaktformular →</a>
     </div>
   </section>
 
@@ -92,21 +99,10 @@ const mapsUrl = `https://www.google.com/maps/embed/v1/place?key=${mapsKey}&q=pla
     const consentDiv = document.getElementById('map-consent');
     const frameDiv = document.getElementById('map-frame');
     const iframe = document.getElementById('gmap') as HTMLIFrameElement;
-
-    // Check if already accepted in this session
-    if (sessionStorage.getItem('gmaps-accepted') === 'yes') {
-      showMap();
-    }
-
-    acceptBtn?.addEventListener('click', () => {
-      sessionStorage.setItem('gmaps-accepted', 'yes');
-      showMap();
-    });
-
+    if (sessionStorage.getItem('gmaps-accepted') === 'yes') showMap();
+    acceptBtn?.addEventListener('click', () => { sessionStorage.setItem('gmaps-accepted', 'yes'); showMap(); });
     function showMap() {
-      if (!iframe.src || iframe.src === 'about:blank') {
-        iframe.src = iframe.dataset.src || '';
-      }
+      if (!iframe.src || iframe.src === 'about:blank') iframe.src = iframe.dataset.src || '';
       consentDiv?.classList.add('hidden');
       frameDiv?.classList.remove('hidden');
     }
