@@ -18,15 +18,22 @@ const mapsUrl = `https://www.google.com/maps/embed/v1/place?key=${mapsKey}&q=pla
 
     <div class="grid md:grid-cols-3 gap-8 mb-16">
       {[
-        { icon: '📱', title: 'Telefon', lines: ['0677 623 11 552', 'Mo–Fr, 8:00–18:00 Uhr'] },
-        { icon: '✉️', title: 'E-Mail', lines: ['termin@hautmitherz.at', 'Antwort innerhalb von 24h'] },
+        { icon: '📱', title: 'Telefon', lines: ['0677 623 11 552', 'Mo–Fr, 8:00–18:00 Uhr'], href: 'tel:+4367762311552' },
+        { icon: '✉️', title: 'E-Mail', lines: ['termin@hautmitherz.at', 'Antwort innerhalb von 24h'], href: 'mailto:ordination@hautmitherz.at' },
         { icon: '📍', title: 'Adresse', lines: ['Brünner Straße 70', 'Stiege 2 / 501 – Endo Nord', '1210 Wien'] },
       ].map(c => (
         <div class="bg-white rounded-2xl p-8 shadow-sm border border-cream-300 text-center">
-          <div class="text-4xl mb-4">{c.icon}</div>
-          <h3 class="font-display font-bold text-[#1a1a1a] mb-3">{c.title}</h3>
-          {c.lines.map(line => <p class="text-gray-500 text-sm">{line}</p>)}
-        </div>
+          {c.href != null ?
+          <a href={c.href}>
+            <div class="text-4xl mb-4">{c.icon}</div>
+            <h3 class="font-display font-bold text-[#1a1a1a] mb-3">{c.title}</h3>
+            {c.lines.map(line => <p class="text-gray-500 text-sm">{line}</p>)}
+          </a> :
+          <div>
+            <div class="text-4xl mb-4">{c.icon}</div>
+            <h3 class="font-display font-bold text-[#1a1a1a] mb-3">{c.title}</h3>
+            {c.lines.map(line => <p class="text-gray-500 text-sm">{line}</p>)}</div>}
+          </div>
       ))}
     </div>
 
